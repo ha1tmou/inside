@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Titillium+Web:wght@700;900&display=swap");
+
+/* [[ Globals ]] */
+:root {
+    --dark-pink: #e45258;
+    --light-gray: #c4c4c4;
+    --darkish: #070809;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #ffffff;
+}
+
+h1,
+h2 {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 900;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* [[ Hero ]] */
+.hero {
+    height: 100vh;
+    background: url("assets/hero.jpg") center center/cover no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Navbar */
+/* Used the position property so that the z-index can take effect */
+.navbar,
+.content {
+    position: relative;
+    z-index: 3;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 57px;
+    margin: 0 4rem;
+}
+
+#logo a {
+    font-size: 2.2rem;
+    color: var(--dark-pink);
+}
+
+.navbar ul {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.navbar ul li {
+    margin: 0 1.5rem;
+    list-style-type: none;
+}
+
+.navbar ul li a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.5s ease-in-out;
+}
+
+/* Content */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    height: 83%;
+}
+
+.content h2 {
+    font-size: 4.3rem;
+}
+
+.content span {
+    color: var(--dark-pink);
+    display: block;
+}
+
+.content a {
+    animation: arrow 5.5s infinite ease-in-out;
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(100%);
+        color: var(--dark-pink);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/* [[ Main ]] */
+main {
+    background-color: var(--darkish);
+}
+
+/* About */
+main .about {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main .about h2 {
+    font-size: 2.3rem;
+}
+
+main .about p {
+    margin: 1.5rem 0;
+    font-size: 1.07rem;
+    max-width: 850px;
+    min-width: 600px;
+}
+
+main .about .btn {
+    color: var(--darkish);
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--light-gray);
+    padding: 1.1rem 2rem;
+    margin: 2rem 0;
+    border: none;
+    border-radius: 2rem;
+    transition: background-color 0.6s ease-in-out;
+}
+
+main .about .btn:hover {
+    background-color: #fff;
+}
